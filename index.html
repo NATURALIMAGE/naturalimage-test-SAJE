@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NATURALIMAGE – Accueil</title>
+<meta name="description" content="Portfolio et activités de Sébastien Pastor, photographe naturaliste : faune, flore, paysages, stages photo et boutique.">
+<meta name="keywords" content="photographie, nature, oiseaux, mammifères, flore, paysages, stages photo, boutique">
+<meta name="robots" content="index, follow">
+<style>
+body {margin:0; font-family:Arial,sans-serif; background:#000; color:#fff; scroll-behavior:smooth;}
+header {text-align:center; padding:6vh 0; font-size:6vh; font-weight:bold; background:#000;}
+header p {margin:5px 0 20px 0; font-size:1.2rem;}
+nav {display:flex; justify-content:center; flex-wrap:wrap; margin-bottom:2vh;}
+nav a {color:white; text-decoration:none; margin:0.5vh 1vw; padding:0.5vh 1vw; background:#22c55e; border-radius:8px; font-weight:bold; transition:0.2s;}
+nav a:hover, nav a.active {transform:translateY(-2px); box-shadow:0 4px 8px rgba(0,0,0,0.3);}
+.hero {text-align:center; padding:10vh 2vw; background:#111;}
+.hero h1 {font-size:5vh; margin-bottom:1vh;}
+.hero p {font-size:1.5rem; margin-bottom:2vh;}
+.hero button {padding:10px 20px; font-size:1rem; background:#22c55e; color:#000; border:none; border-radius:6px; cursor:pointer; font-weight:bold; transition:0.2s;}
+.hero button:hover {background:#16a34a;}
+section {max-width:1000px; margin:0 auto; padding:40px 20px;}
+section h2 {text-align:center; font-size:2.5rem; margin-bottom:20px;}
+section p {text-align:center; font-size:1.2rem; margin-bottom:30px;}
+.cta {text-align:center; margin-top:20px;}
+.cta button {padding:10px 20px; margin:5px; font-size:1rem; font-weight:bold; border:none; border-radius:6px; background:#22c55e; color:#000; cursor:pointer; transition:0.2s;}
+.cta button:hover {background:#16a34a;}
+footer {text-align:center; padding:20px; background:#020617; margin-top:20px;}
+#backToTop {position:fixed; bottom:30px; right:30px; padding:10px 15px; font-size:1.5rem; display:none; border:none; border-radius:8px; background:#22c55e; color:#000; cursor:pointer; z-index:999;}
+
+/* LIGHTBOX */
+#overlay {position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:none; justify-content:center; align-items:center; z-index:1000; flex-direction:column;}
+#overlay img {max-width:90%; max-height:80%; border-radius:10px;}
+#overlay button {position:absolute; top:50%; transform:translateY(-50%); background:#22c55e; color:#000; border:none; font-size:2rem; padding:10px 15px; cursor:pointer; border-radius:8px;}
+#prevBtn {left:20px;} #nextBtn {right:20px;}
+</style>
+</head>
+<body>
+
+<header>
+  NATURALIMAGE
+  <p>Sébastien Pastor – photographe naturaliste</p>
+  <nav>
+    <a href="index.html" class="active">Accueil</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="stages.html">Stages</a>
+    <a href="shop.html">Boutique</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">À propos</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>NATURALIMAGE</h1>
+  <p>Capter la beauté brute de la nature sauvage</p>
+  <button onclick="location.href='portfolio.html'">Voir le portfolio</button>
+</div>
+
+<!-- PRESENTATION -->
+<section>
+<h2>Photographie naturaliste</h2>
+<p>Je suis spécialisé dans la photographie de la faune et de la flore, avec une approche immersive et respectueuse de l’environnement. Chaque image raconte une histoire, un instant sauvage capturé avec patience.</p>
+
+<div class="cta">
+  <p>Découvrez l’ensemble de mon travail ou participez à un stage photo.</p>
+  <button onclick="location.href='portfolio.html'">Portfolio</button>
+  <button onclick="location.href='stages.html'">Stages</button>
+</div>
+
+</section>
+
+<footer>
+© 2026 NATURALIMAGE – Sébastien Pastor
+</footer>
+
+<!-- Bouton retour en haut -->
+<button id="backToTop" title="Retour en haut">↑</button>
+
+<!-- LIGHTBOX -->
+<div id="overlay"><img id="overlay-img"><button id="prevBtn">‹</button><button id="nextBtn">›</button></div>
+
+<script>
+// BACK TO TOP
+const backToTopBtn = document.getElementById("backToTop");
+window.onscroll = function() {
+  if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+};
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// LIGHTBOX
+const images = []; // aucune preview, lightbox vide
+const overlay = document.getElementById("overlay");
+const overlayImg = document.getElementById("overlay-img");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+let currentIndex = 0;
+function showOverlay(index){
+  if(images.length === 0) return;
+  overlay.style.display = "flex";
+  overlayImg.src = images[index].src;
+  currentIndex = index;
+  document.body.style.overflow = "hidden";
+}
+images.forEach((img, i) => {
+  img.addEventListener("click", () => showOverlay(i));
+});
+overlay.addEventListener("click", e => {
+  if(e.target === overlay) {
+    overlay.style.display = "none";
+    overlayImg.src = "";
+    document.body.style.overflow = "";
+  }
+});
+prevBtn.addEventListener("click", e => {
+  e.stopPropagation();
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  overlayImg.src = images[currentIndex].src;
+});
+nextBtn.addEventListener("click", e => {
+  e.stopPropagation();
+  currentIndex = (currentIndex + 1) % images.length;
+  overlayImg.src = images[currentIndex].src;
+});
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape") overlay.click();
+  if(e.key === "ArrowLeft") prevBtn.click();
+  if(e.key === "ArrowRight") nextBtn.click();
+});
+</script>
+
+</body>
+</html>

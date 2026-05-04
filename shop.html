@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NATURALIMAGE – Boutique</title>
+<meta name="description" content="Boutique de Sébastien Pastor : tirages photo, livres et produits dérivés. Commande via le formulaire de contact.">
+<meta name="keywords" content="photographie, boutique, tirages, livres, produits dérivés, commande">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>NATURALIMAGE</h1>
+  <p>Sébastien Pastor – photographe naturaliste</p>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="stages.html">Stages</a>
+    <a href="shop.html">Boutique</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">À propos</a>
+  </nav>
+</header>
+
+<section id="shop">
+<h2>Boutique</h2>
+<p style="text-align:center; margin-bottom:30px;">Pour commander, cliquez sur "Commander" et utilisez le formulaire de contact.</p>
+
+<div class="gallery">
+  <!-- Exemple produit 1 -->
+  <div class="photo-wrapper vertical">
+    <img src="https://i.ibb.co/YLw4MRf/photo-tirage1.jpg" alt="Tirage photo 1">
+    <p>Tirage Faune – 30x40cm – 50€</p>
+    <button onclick="location.href='contact.html'">Commander</button>
+  </div>
+
+  <!-- Exemple produit 2 -->
+  <div class="photo-wrapper vertical">
+    <img src="https://i.ibb.co/4FKDkJG/photo-livre1.jpg" alt="Livre photo 1">
+    <p>Livre Photo – 2026 – 40€</p>
+    <button onclick="location.href='contact.html'">Commander</button>
+  </div>
+
+  <!-- Exemple produit 3 -->
+  <div class="photo-wrapper vertical">
+    <img src="https://i.ibb.co/k3V9Mwn/photo-objet1.jpg" alt="Objet dérivé 1">
+    <p>Calendrier 2026 – 25€</p>
+    <button onclick="location.href='contact.html'">Commander</button>
+  </div>
+
+  <!-- Ajouter d'autres produits ici si nécessaire -->
+</div>
+</section>
+
+<footer style="text-align:center; padding:20px; background:#020617">
+© 2026 NATURALIMAGE – Sébastien Pastor
+</footer>
+
+<button id="backToTop" title="Retour en haut">↑</button>
+
+<script>
+// Back to top
+const backToTopBtn = document.getElementById("backToTop");
+window.onscroll = function() {
+  if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+};
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+
+</body>
+</html>

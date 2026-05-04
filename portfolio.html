@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NATURALIMAGE – Portfolio</title>
+<meta name="description" content="Portfolio complet de Sébastien Pastor, photographe naturaliste : oiseaux, mammifères, flore, paysages et divers.">
+<meta name="keywords" content="photographie, nature, oiseaux, mammifères, flore, paysages, divers, portfolio">
+<meta name="robots" content="index, follow">
+<style>
+body {margin:0; font-family:Arial,sans-serif; background:#000; color:#fff; scroll-behavior:smooth;}
+header {text-align:center; padding:6vh 0; font-size:6vh; font-weight:bold; background:#000;}
+header p {margin:5px 0 20px 0; font-size:1.2rem;}
+nav {display:flex; justify-content:center; flex-wrap:wrap; margin-bottom:2vh;}
+nav a {color:white; text-decoration:none; margin:0.5vh 1vw; padding:0.5vh 1vw; background:#22c55e; border-radius:8px; font-weight:bold; transition:0.2s;}
+nav a:hover, nav a.active {transform:translateY(-2px); box-shadow:0 4px 8px rgba(0,0,0,0.3);}
+#portfolio {max-width:1200px; margin:0 auto; padding:0 20px;}
+.filter-buttons {text-align:center; margin-bottom:20px;}
+.filter-btn {padding:8px 16px; margin:5px; background:#22c55e; border:none; color:#000; font-weight:bold; border-radius:6px; cursor:pointer; transition:0.2s;}
+.filter-btn.active, .filter-btn:hover {background:#16a34a; color:#fff;}
+.gallery {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px;}
+.photo-wrapper {position:relative; overflow:hidden; border-radius:12px; cursor:pointer;}
+.photo-wrapper img {width:100%; display:block; transition:transform 0.3s;}
+.photo-wrapper:hover img {transform:scale(1.05);}
+.overlay {position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); display:flex; flex-direction:column; justify-content:center; align-items:center; opacity:0; transition:opacity 0.3s; text-align:center; color:#fff; font-weight:bold;}
+.photo-wrapper:hover .overlay {opacity:1;}
+.overlay button {margin-top:10px; padding:6px 12px; background:#22c55e; color:#000; border:none; border-radius:5px; cursor:pointer; font-weight:bold; transition:0.2s;}
+.overlay button:hover {background:#16a34a;}
+#overlay {position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:none; justify-content:center; align-items:center; z-index:1000; flex-direction:column;}
+#overlay img {max-width:90%; max-height:80%; border-radius:10px;}
+#overlay button {position:absolute; top:50%; transform:translateY(-50%); background:#22c55e; color:#000; border:none; font-size:2rem; padding:10px 15px; cursor:pointer; border-radius:8px;}
+#prevBtn {left:20px;} #nextBtn {right:20px;}
+footer {text-align:center; padding:20px; background:#020617; margin-top:20px;}
+#backToTop {position:fixed; bottom:30px; right:30px; padding:10px 15px; font-size:1.5rem; display:none; border:none; border-radius:8px; background:#22c55e; color:#000; cursor:pointer; z-index:999;}
+</style>
+</head>
+<body>
+
+<header>
+  NATURALIMAGE
+  <p>Sébastien Pastor – photographe naturaliste</p>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="portfolio.html" class="active">Portfolio</a>
+    <a href="stages.html">Stages</a>
+    <a href="shop.html">Boutique</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">À propos</a>
+  </nav>
+</header>
+
+<section id="portfolio">
+<h2 style="text-align:center;">Portfolio</h2>
+<p style="text-align:center; margin-bottom:15px;">Toutes les photos sont disponibles à la vente en tirages ou fichiers numériques.</p>
+<p style="text-align:center; margin-bottom:30px;">Pour commander, utilisez le <a href="contact.html">formulaire de contact</a>.</p>
+
+<div class="filter-buttons">
+  <button class="filter-btn active" data-filter="all">Tout</button>
+  <button class="filter-btn" data-filter="oiseaux">Oiseaux</button>
+  <button class="filter-btn" data-filter="mammiferes">Mammifères</button>
+  <button class="filter-btn" data-filter="flore">Flore</button>
+  <button class="filter-btn" data-filter="paysages">Paysages</button>
+  <button class="filter-btn" data-filter="divers">Divers</button>
+</div>
+
+<!-- OISEAUX -->
+<div class="gallery" data-category="oiseaux">
+  <div class="photo-wrapper horizontal oiseaux"><img src="https://i.ibb.co/PsfpymJL/image1.jpg" alt="Oiseau 1"><div class="overlay"><span>Oiseau 1</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper horizontal oiseaux"><img src="https://i.ibb.co/0VQ0rk9T/image2.jpg" alt="Oiseau 2"><div class="overlay"><span>Oiseau 2</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper horizontal oiseaux"><img src="https://i.ibb.co/q3fCF5RC/IMG-20260313-WA0002.jpg" alt="Oiseau 3"><div class="overlay"><span>Oiseau 3</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper horizontal oiseaux"><img src="https://i.ibb.co/chng4Yr4/IMG-20260313-WA0003.jpg" alt="Oiseau 4"><div class="overlay"><span>Oiseau 4</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical oiseaux"><img src="https://i.ibb.co/0pJMw2h0/IMG-20260313-WA0004.jpg" alt="Oiseau 5"><div class="overlay"><span>Oiseau 5</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical oiseaux"><img src="https://i.ibb.co/yn7ZHZYP/IMG-20260313-WA0005.jpg" alt="Oiseau 6"><div class="overlay"><span>Oiseau 6</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical oiseaux"><img src="https://i.ibb.co/XkvN74LQ/IMG-20260313-WA0020.jpg" alt="Oiseau 7"><div class="overlay"><span>Oiseau 7</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical oiseaux"><img src="https://i.ibb.co/5hXwZ6MD/IMG-20260313-WA0019.jpg" alt="Oiseau 8"><div class="overlay"><span>Oiseau 8</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper horizontal oiseaux"><img src="https://i.ibb.co/MDG3QNsr/FB-IMG-1773408784391.jpg" alt="Oiseau 9"><div class="overlay"><span>Oiseau 9</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper horizontal oiseaux"><img src="https://i.ibb.co/NR0XRxH/IMG-20260313-WA0022.jpg" alt="Oiseau 10"><div class="overlay"><span>Oiseau 10</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+</div>
+
+<!-- MAMMIFÈRES -->
+<div class="gallery" data-category="mammiferes">
+  <div class="photo-wrapper horizontal mammiferes"><img src="https://i.ibb.co/NdKhyCNw/IMG-20260313-WA0008.jpg" alt="Mammifère 1"><div class="overlay"><span>Mammifère 1</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper horizontal mammiferes"><img src="https://i.ibb.co/zT37fspt/IMG-20260313-WA0007.jpg" alt="Mammifère 2"><div class="overlay"><span>Mammifère 2</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper horizontal mammiferes"><img src="https://i.ibb.co/5gN4VWyF/IMG-20260313-WA0006.jpg" alt="Mammifère 3"><div class="overlay"><span>Mammifère 3</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper horizontal mammiferes"><img src="https://i.ibb.co/B58hMbRn/IMG-20260313-WA0009.jpg" alt="Mammifère 4"><div class="overlay"><span>Mammifère 4</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper horizontal mammiferes"><img src="https://i.ibb.co/4RvWfJKv/IMG-20260313-WA0010.jpg" alt="Mammifère 5"><div class="overlay"><span>Mammifère 5</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical mammiferes"><img src="https://i.ibb.co/S4JzXn78/FB-IMG-1773392609625.jpg" alt="Mammifère 6"><div class="overlay"><span>Mammifère 6</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical mammiferes"><img src="https://i.ibb.co/tT5pg9Zy/IMG-20260313-WA0011.jpg" alt="Mammifère 7"><div class="overlay"><span>Mammifère 7</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper horizontal mammiferes"><img src="https://i.ibb.co/TMr9Znf/FB-IMG-1773386783158.jpg" alt="Mammifère 8"><div class="overlay"><span>Mammifère 8</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+</div>
+
+<!-- FLORE -->
+<div class="gallery" data-category="flore">
+  <div class="photo-wrapper vertical flore"><img src="https://i.ibb.co/Xx1R4QzQ/FB-IMG-1773365863559.jpg" alt="Flore 1"><div class="overlay"><span>Flore 1</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical flore"><img src="https://i.ibb.co/j9tyRq3s/FB-IMG-1773367459134.jpg" alt="Flore 2"><div class="overlay"><span>Flore 2</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical flore"><img src="https://i.ibb.co/0Vqy29MH/FB-IMG-1773367985379.jpg" alt="Flore 3"><div class="overlay"><span>Flore 3</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical flore"><img src="https://i.ibb.co/bjTWwQTT/FB-IMG-1773386694572.jpg" alt="Flore 4"><div class="overlay"><span>Flore 4</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical flore"><img src="https://i.ibb.co/Zz6kjBn3/FB-IMG-1773367960191.jpg" alt="Flore 5"><div class="overlay"><span>Flore 5</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical flore"><img src="https://i.ibb.co/mCYfVRZw/IMG-20260313-WA0016.jpg" alt="Flore 6"><div class="overlay"><span>Flore 6</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical flore"><img src="https://i.ibb.co/hxG88LSc/IMG-20260313-WA0012.jpg" alt="Flore 7"><div class="overlay"><span>Flore 7</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical flore"><img src="https://i.ibb.co/0yZpym0F/IMG-20260313-WA0014.jpg" alt="Flore 8"><div class="overlay"><span>Flore 8</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+</div>
+
+<!-- PAYSAGES -->
+<div class="gallery" data-category="paysages">
+  <div class="photo-wrapper vertical paysages"><img src="https://i.ibb.co/G3WPyrL5/FB-IMG-1773367976204.jpg" alt="Paysage 1"><div class="overlay"><span>Paysage 1</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical paysages"><img src="https://i.ibb.co/j12RdFC/FB-IMG-1773386734220.jpg" alt="Paysage 2"><div class="overlay"><span>Paysage 2</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical paysages"><img src="https://i.ibb.co/6c8nk14X/FB-IMG-1773367544848.jpg" alt="Paysage 3"><div class="overlay"><span>Paysage 3</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical paysages"><img src="https://i.ibb.co/tTPp5m4g/FB-IMG-1773386813204.jpg" alt="Paysage 4"><div class="overlay"><span>Paysage 4</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper horizontal paysages"><img src="https://i.ibb.co/4wd5JC7y/FB-IMG-1773367925041.jpg" alt="Paysage 5"><div class="overlay"><span>Paysage 5</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper horizontal paysages"><img src="https://i.ibb.co/QBC0Wqd/IMG-20260313-WA0013.jpg" alt="Paysage 6"><div class="overlay"><span>Paysage 6</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper horizontal paysages"><img src="https://i.ibb.co/v4XB3k2k/FB-IMG-1773367385460.jpg" alt="Paysage 7"><div class="overlay"><span>Paysage 7</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+</div>
+
+<!-- DIVERS -->
+<div class="gallery" data-category="divers">
+  <div class="photo-wrapper horizontal divers"><img src="https://i.ibb.co/TDYtmjTh/IMG-20260313-WA0017.jpg" alt="Divers 1"><div class="overlay"><span>Divers 1</span><button onclick="location.href='contact.html'">Commander</button></div></div>
+  <div class="photo-wrapper vertical divers"><img src="https://i.ibb.co/SwLfF5bV/FB

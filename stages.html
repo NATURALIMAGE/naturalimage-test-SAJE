@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NATURALIMAGE – Stages</title>
+<meta name="description" content="Stages photo de Sébastien Pastor : vautours, sabots de Vénus et autres formations de photographie naturaliste.">
+<meta name="keywords" content="photographie, stages, vautours, sabots de Vénus, nature, formation photo">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>NATURALIMAGE</h1>
+  <p>Sébastien Pastor – photographe naturaliste</p>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="stages.html">Stages</a>
+    <a href="shop.html">Boutique</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">À propos</a>
+  </nav>
+</header>
+
+<section id="stages">
+<h2>Stages</h2>
+
+<div class="card">
+<h3>Stages Photo Vautours</h3>
+<p><strong>Dates :</strong> 20 mars → 20 mai 2026</p>
+<p><strong>Lieu :</strong> Meyrueis - Lozère</p>
+<p><strong>Durée :</strong> 8h</p>
+<p><strong>Prix :</strong> 80€</p>
+<button onclick="location.href='contact.html'">Réserver</button>
+</div>
+
+<div class="card">
+<h3>Stages photo Sabots de Vénus</h3>
+<p><strong>Dates :</strong> 10 → 30 mai 2026</p>
+<p><strong>Lieu :</strong> Meyrueis - Lozère</p>
+<p><strong>Durée :</strong> 3h</p>
+<p><strong>Prix :</strong> 30€</p>
+<button onclick="location.href='contact.html'">Réserver</button>
+</div>
+
+<!-- Ajouter d'autres stages ici si nécessaire -->
+
+</section>
+
+<footer style="text-align:center; padding:20px; background:#020617">
+© 2026 NATURALIMAGE – Sébastien Pastor
+</footer>
+
+<button id="backToTop" title="Retour en haut">↑</button>
+
+<script>
+// Back to top
+const backToTopBtn = document.getElementById("backToTop");
+window.onscroll = function() {
+  if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+};
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+
+</body>
+</html>

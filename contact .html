@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NATURALIMAGE – Contact</title>
+<meta name="description" content="Contactez Sébastien Pastor pour vos commandes, réservations de stages ou informations sur la photographie naturaliste.">
+<meta name="keywords" content="contact, commande, stages, photographie, naturaliste, formulaire">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>NATURALIMAGE</h1>
+  <p>Sébastien Pastor – photographe naturaliste</p>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="stages.html">Stages</a>
+    <a href="shop.html">Boutique</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">À propos</a>
+  </nav>
+</header>
+
+<section id="contact">
+<h2>Contact</h2>
+<p style="text-align:center; margin-bottom:30px;">Pour toute demande, réservation de stage ou commande, remplissez le formulaire ci-dessous :</p>
+
+<form action="mailto:ton-email@example.com" method="post" enctype="text/plain">
+  <label for="name">Nom :</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email :</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="subject">Objet :</label>
+  <select id="subject" name="subject" required>
+    <option value="">--Choisir--</option>
+    <option value="Commande">Commande</option>
+    <option value="Stage">Stage</option>
+    <option value="Information">Information</option>
+  </select>
+
+  <label for="message">Message :</label>
+  <textarea id="message" name="message" rows="6" required></textarea>
+
+  <button type="submit">Envoyer</button>
+</form>
+</section>
+
+<footer style="text-align:center; padding:20px; background:#020617">
+© 2026 NATURALIMAGE – Sébastien Pastor
+</footer>
+
+<button id="backToTop" title="Retour en haut">↑</button>
+
+<script>
+// Back to top
+const backToTopBtn = document.getElementById("backToTop");
+window.onscroll = function() {
+  if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+};
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+
+</body>
+</html>
