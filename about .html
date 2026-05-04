@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NATURALIMAGE – À propos</title>
+<meta name="description" content="Découvrez Sébastien Pastor, photographe naturaliste, sa passion pour la faune et la flore, ses stages photo et ses tirages.">
+<meta name="keywords" content="photographe, naturaliste, faune, flore, stages photo, tirages, à propos">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>NATURALIMAGE</h1>
+  <p>Sébastien Pastor – photographe naturaliste</p>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="stages.html">Stages</a>
+    <a href="shop.html">Boutique</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">À propos</a>
+  </nav>
+</header>
+
+<section id="about">
+  <h2>À propos</h2>
+  <p>Je m'appelle Sébastien Pastor, photographe naturaliste passionné par la beauté brute de la nature. Depuis de nombreuses années, je capture des instants uniques dans la faune et la flore, en privilégiant le respect de l'environnement et une approche immersive.</p>
+
+  <p>Mon objectif est de raconter des histoires visuelles qui émerveillent et sensibilisent à la protection de la nature. Chaque photo est le résultat de patience, d’observation attentive et d’un engagement total sur le terrain.</p>
+
+  <p>À travers NATURALIMAGE, je propose des portfolios, des stages photo et des tirages uniques pour partager cette passion avec tous ceux qui souhaitent découvrir la nature sous un angle authentique et captivant.</p>
+</section>
+
+<footer style="text-align:center; padding:20px; background:#020617">
+© 2026 NATURALIMAGE – Sébastien Pastor
+</footer>
+
+<button id="backToTop" title="Retour en haut">↑</button>
+
+<script>
+// Back to top
+const backToTopBtn = document.getElementById("backToTop");
+window.onscroll = function() {
+  if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+};
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+
+</body>
+</html>
